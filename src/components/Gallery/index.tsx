@@ -5,7 +5,7 @@ import { CatContext } from "../../context/CatContext";
 import { CardSkeleton } from "../CardSkeleton";
 
 export default function Gallery() {
-  const { cats, vote, hasVoted, fetchCats, loading } = useContext(CatContext)
+  const { cats, vote, hasVoted, fetchCats, loading, voting: { isLoading } } = useContext(CatContext)
 
   useEffect(() => {
     fetchCats()
@@ -15,7 +15,7 @@ export default function Gallery() {
     loading ?
       <CardSkeleton />
       :
-      <Carousel className="w-full">
+      <Carousel className="w-full" opts={{ watchDrag: !isLoading}}>
         <CarouselContent className="flex" >
           {cats.map((cat) => (
             <CarouselItem key={cat.id} className="flex justify-center">
@@ -27,12 +27,18 @@ export default function Gallery() {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious
-          className="absolute left-2 top-1/2 -translate-y-1/2 z-10 text-gray-900 w-11 h-11 text-[24px]"
-        />
-        <CarouselNext
-          className="absolute right-2 top-1/2 -translate-y-1/2 z-10 text-gray-900 w-11 h-11 text-[24px]"
-        />
+        {
+        !isLoading && (
+            <>
+              <CarouselPrevious
+                className="absolute left-2 top-1/2 -translate-y-1/2 z-10 text-gray-900 w-11 h-11 text-[24px]"
+              />
+              <CarouselNext
+                className="absolute right-2 top-1/2 -translate-y-1/2 z-10 text-gray-900 w-11 h-11 text-[24px]"
+              />
+            </>
+          )
+        }
       </Carousel>
   );
 }
