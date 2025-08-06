@@ -2,15 +2,7 @@ import { createContext, useState, useCallback } from 'react'
 import type { CatType } from '../types/Cat'
 import { api } from '../lib/api'
 import { getSubId } from '../utils/subId'
-
-type CatContextType = {
-    cats: CatType[]
-    votes: string[]
-    loading: boolean
-    fetchCats: () => void
-    vote: (image_id: string, value: number) => void
-    hasVoted: (id: string) => boolean
-}
+import type { CatContextType } from '../types/CatContextType'
 
 export const CatContext = createContext<CatContextType>({} as CatContextType)
 
