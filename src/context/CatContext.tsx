@@ -10,6 +10,7 @@ export const CatProvider = ({ children }: { children: React.ReactNode }) => {
     const [cats, setCats] = useState<CatType[]>([])
     const [votes, setVotes] = useState<string[]>([])
     const [loading, setLoading] = useState(false)
+    const [voting, setVoting] = useState({ isLoading: false, value: 0 })
 
     const fetchCats = useCallback(async () => {
         setLoading(true)
@@ -19,6 +20,7 @@ export const CatProvider = ({ children }: { children: React.ReactNode }) => {
     }, [])
 
     const vote = async (image_id: string, value: number) => {
+        setVoting({isLoading: true, value })
         const sub_id = getSubId()
         await api.post('/votes', { image_id, value, sub_id })
         const voteRes = await api.get(`/votes?sub_id=${sub_id}`)
@@ -32,12 +34,13 @@ export const CatProvider = ({ children }: { children: React.ReactNode }) => {
                 cat.id === image_id ? { ...cat, score: scores[cat.id] } : cat
             )
         )
+        setVoting({isLoading: false, value: 0 })
     }
 
     const hasVoted = (id: string) => votes.includes(id)
 
     return (
-        <CatContext.Provider value={{ cats, votes, loading, fetchCats, vote, hasVoted }}>
+        <CatContext.Provider value={{ cats, votes, loading, voting, fetchCats, vote, hasVoted }}>
             {children}
         </CatContext.Provider>
     )
