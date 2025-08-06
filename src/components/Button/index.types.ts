@@ -8,5 +8,6 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     variant?: VariantType,
     isSelected?: boolean,
     icon?: IconType,
-    isLoading?: boolean
+    isLoading?: boolean,
+    score?: number,
 }

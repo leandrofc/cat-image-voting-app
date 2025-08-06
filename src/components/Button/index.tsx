@@ -10,6 +10,7 @@ export const Button = (({
     disabled = false,
     isSelected = false,
     icon,
+    score,
     ...rest
 }: ButtonProps) => {
 
@@ -28,14 +29,14 @@ export const Button = (({
     const Icon = {
         ThumbsUp:   <ThumbsUp
                         className={`
-                            ${isSelected ? "text-orange-700": "text-gray-700" }
                             ${disabled && "text-gray-300" }
+                            ${score && score > 0 && "text-orange-700"}
                         `}
                     />,
         ThumbsDown: <ThumbsDown
                         className={`
-                            ${isSelected ? "text-orange-700": "text-gray-700" }
                             ${disabled && "text-gray-300" }
+                            ${score && score < 0 && "text-orange-700"}
                         `}
                     />
     }
