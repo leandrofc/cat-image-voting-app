@@ -29,6 +29,16 @@ export default {
         fontFamily: {
           sans: ["Inter", "Arial", "sans-serif"],
         },
+        keyframes: {
+          spinVariable: {
+            '0%': { transform: 'rotate(0deg)' },
+            '50%': { transform: 'rotate(180deg)', animationTimingFunction: 'ease-in' },
+            '100%': { transform: 'rotate(360deg)', animationTimingFunction: 'ease-out' },
+          },
+        },
+        animation: {
+          'spin-variable': 'spinVariable 1.5s infinite',
+        },
       },
     },
     plugins: [],
