@@ -1,13 +1,25 @@
+import { useContext, useEffect } from "react";
 import { Card } from "../Card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "../ui/carousel";
+import { CatContext } from "../../context/CatContext";
 
 export default function Gallery() {
+  const { cats, vote, hasVoted, fetchCats } = useContext(CatContext)
+
+  useEffect(() => {
+    fetchCats()
+  }, [])
+
   return (
     <Carousel className="w-full">
       <CarouselContent className="flex" >
-        {[1, 2, 3].map((item) => (
-          <CarouselItem key={item} className="flex justify-center">
-            <Card />
+        {cats.map((cat) => (
+          <CarouselItem key={cat.id} className="flex justify-center">
+            <Card
+              cat={cat}
+              onVote={vote}
+              voted={hasVoted(cat.id)}
+            />
           </CarouselItem>
         ))}
       </CarouselContent>
