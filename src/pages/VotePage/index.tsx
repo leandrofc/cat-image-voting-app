@@ -5,7 +5,7 @@ import { useContext } from "react";
 import { CatContext } from "../../context/CatContext";
 
 function VotePage() {
-    const { fetchCats, loading } = useContext(CatContext)
+    const { fetchCats, loading, voting: { isLoading } } = useContext(CatContext)
 
     return (
         <div className="flex flex-col items-center w-screen h-screen pt-7 pb-7 justify-between">
@@ -33,7 +33,7 @@ function VotePage() {
                     text="Show me new images"
                     onClick={fetchCats}  
                     isLoading={loading}
-                    disabled={loading}
+                    disabled={loading || isLoading}
                 />
             </div>
         </div>
