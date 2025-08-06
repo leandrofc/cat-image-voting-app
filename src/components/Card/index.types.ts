@@ -1,5 +1,7 @@
-import type { Cat } from "../../types/Cat";
+import type { CatType } from "../../types/Cat";
 
 export interface CardProps {
-    cat?: Cat,
+    cat: CatType,
+    onVote: (image_id: string, value: number) => void,
+    voted: boolean
 }
