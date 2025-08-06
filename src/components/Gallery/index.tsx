@@ -15,7 +15,7 @@ export default function Gallery() {
     loading ?
       <CardSkeleton />
       :
-      <Carousel className="w-full" opts={{ watchDrag: !isLoading}}>
+      <Carousel className="w-full sm:w-[500px]" opts={{ watchDrag: !isLoading }}>
         <CarouselContent className="flex" >
           {cats.map((cat) => (
             <CarouselItem key={cat.id} className="flex justify-center">

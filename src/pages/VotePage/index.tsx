@@ -29,7 +29,7 @@ function VotePage() {
                     </h3>
                 </div>
 
-                <div className="lg:flex lg:flex-col lg:items-center lg:w-[450px]">
+                <div className="flex justify-center lg:flex lg:flex-col lg:items-center lg:w-[450px]">
                     <Gallery />
 
                     <div className="hidden lg:block lg:w-[235px]">
@@ -44,7 +44,7 @@ function VotePage() {
 
             </div>
 
-            <div className="w-full pl-7 pr-7 sm:w-1/2 lg:hidden">
+            <div className="w-full pl-7 pr-7 max-w-[500px] lg:hidden">
                 <Button
                     text="Show me new images"
                     onClick={fetchCats}  
