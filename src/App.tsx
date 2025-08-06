@@ -1,9 +1,7 @@
+import VotePage from "./pages/VotePage";
+
 function App() {
-  return (
-    <>
-      <h1 className="text-orange-700">Hello World</h1>
-    </>
-  )
+  return <VotePage />
 }
 
 export default App
