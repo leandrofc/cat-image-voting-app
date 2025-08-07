@@ -1,9 +1,11 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Button } from "../Button";
 import type { CardProps } from "./index.types";
 import { CatContext } from "../../context/CatContext";
 
 export const Card = (({ cat, onVote, voted }: CardProps) => {
+    const [loaded, setLoaded] = useState(false);
+
     const { id, url, score } = cat;
 
     const { voting: { isLoading, value }  } = useContext(CatContext)
@@ -14,8 +16,12 @@ export const Card = (({ cat, onVote, voted }: CardProps) => {
         <div data-testid="card" className="p-5 m-10 border border-gray-300 rounded-3xl text-center w-[303px]">
             <img
                 src={url}
+                onLoad={() => setLoaded(true)}
                 alt="Cat"
-                className="h-[313px] w-[265px] object-cover"    
+                className={`
+                    h-[313px] w-[265px] object-cover transition-opacity duration-500
+                    ${loaded ? 'opacity-100' : 'opacity-0'}
+                `}    
             />
 
             <div className="w-full p-2 border-b border-gray-300">
