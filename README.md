@@ -15,6 +15,8 @@ The application provides core features such as:
 - 🖼️ **New batch of photos** - Request a new batch of photos for you to view and vote on.
 - 🚨 **Action feedback** - Receive success or error messages when voting or creating a new batch of images.
 
+👉 [Click here to access the deployed application](https://cat-image-voting-app-five.vercel.app/)
+
 ## ✨ Figma Design
 
 The entire app layout was designed using **Figma**.  
@@ -56,7 +58,6 @@ all requests so each visitor’s votes are tracked.
 - **Sonner for toast notifications**
 - **Chadcn**
 - **Jest + React Testing Library**
-- **React Testing Library**
 - **React Feather Icons**
 - **ESLint & TypeScript ESLint**
 
