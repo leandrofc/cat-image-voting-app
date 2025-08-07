@@ -11,7 +11,7 @@ export const Card = (({ cat, onVote, voted }: CardProps) => {
     const votingUp = value > 0;
 
     return (
-        <div className="p-5 m-10 border border-gray-300 rounded-3xl text-center w-[303px]">
+        <div data-testid="card" className="p-5 m-10 border border-gray-300 rounded-3xl text-center w-[303px]">
             <img
                 src={url}
                 alt="Cat"

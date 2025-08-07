@@ -2,7 +2,7 @@ import { Skeleton } from "../ui/skeleton";
 
 export const CardSkeleton = (() => {
     return (
-        <div className="p-5 m-10 border border-gray-300 rounded-3xl text-center w-[303px]">
+        <div data-testid="card-skeleton" className="p-5 m-10 border border-gray-300 rounded-3xl text-center w-[303px]">
 
             <Skeleton className="h-[313px] w-[265px] bg-gray-300" />
 
