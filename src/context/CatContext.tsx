@@ -16,7 +16,7 @@ export const CatProvider = ({ children }: { children: React.ReactNode }) => {
     const fetchCats = useCallback(async () => {
         setLoading(true)
         try {
-            const res = await api.get('/images/search?limit=9')
+            const res = await api.get('/images/search?limit=10')
             setCats(res.data)
         } catch (error) {
             console.error('Error searching for cats:', error)
