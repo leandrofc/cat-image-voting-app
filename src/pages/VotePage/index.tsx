@@ -1,17 +1,17 @@
 import Gallery from "../../components/Gallery"
-import Logo from "/catImageVotingLogo.png";
 import { Button } from "../../components/Button";
 import { useContext } from "react";
 import { CatContext } from "../../context/CatContext";
 
 function VotePage() {
     const { fetchCats, loading, voting: { isLoading } } = useContext(CatContext)
-
+    const Logo = "/catImageVotingLogo.png";
     return (
         <div className="flex flex-col items-center w-screen h-auto pt-7 pb-7 justify-between">
             <div className="lg:w-full lg:max-w-7xl">
                 <img
                     src={Logo}  
+                    alt="Cat Image Voting Logo"
                     className="w-[244px] object-contain mt-3 mb-10"
                 />
             </div>
