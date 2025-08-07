@@ -27,18 +27,26 @@ export const Button = (({
     }
 
     const Icon = {
-        ThumbsUp:   <ThumbsUp
-                        className={`
-                            ${disabled && "text-gray-300" }
-                            ${score && score > 0 && "text-orange-700"}
-                        `}
-                    />,
-        ThumbsDown: <ThumbsDown
-                        className={`
-                            ${disabled && "text-gray-300" }
-                            ${score && score < 0 && "text-orange-700"}
-                        `}
-                    />
+        ThumbsUp: (
+            <span data-testid="icon-thumbs-up">
+              <ThumbsUp
+                className={`
+                  ${disabled && "text-gray-300"}
+                  ${score && score > 0 && "text-orange-700"}
+                `}
+              />
+            </span>
+          ),
+        ThumbsDown: (
+            <span data-testid="icon-thumbs-down">
+                <ThumbsDown
+                className={`
+                    ${disabled && "text-gray-300"}
+                    ${score && score < 0 && "text-orange-700"}
+                `}
+                />
+            </span>
+        ),
     }
 
     return (
