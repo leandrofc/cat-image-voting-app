@@ -54,7 +54,7 @@ export const Button = (({
             {...rest}
             className={`rounded-xl text-md w-full flex items-center justify-center
                 disabled:cursor-not-allowed disabled:hover:scale-100
-                hover:scale-105 transition-transform
+                hover:scale-105 transition-transform antialiased
                 ${!isIconVariant && "disabled:opacity-50"}
                 ${variantsClasses[variant as VariantType]}
                 ${isLoading && "pointer-events-none"}

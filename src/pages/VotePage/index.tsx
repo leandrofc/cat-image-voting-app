@@ -18,11 +18,11 @@ function VotePage() {
 
             <div className="w-screen lg:flex lg:w-full lg:max-w-7xl items-center">
                 <div className="flex flex-col w-full items-center gap-5 lg:items-start">
-                    <h1 className="text-xl font-bold w-[90%] text-center leading-[44px] lg:text-left lg:text-xxl lg:leading-[72px]">
+                    <h1 className="text-xl font-bold w-[90%] text-center leading-[44px] antialiased lg:text-left lg:text-xxl lg:leading-[72px]">
                         Vote on the <br />
                         cute cat images
                     </h1>
-                    <h3 className="texte-md leading-[19px] text-center font-normal lg:text-left lg:text-lg lg:leading-[29px]">
+                    <h3 className="leading-[19px] text-center font-normal antialiased lg:text-left lg:text-lg lg:leading-[29px]">
                         Click one of the icons. <br />
                         Like if you liked it, <br className="lg:hidden" />
                         and dislike if you didn't.

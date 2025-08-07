@@ -19,7 +19,7 @@ export const Card = (({ cat, onVote, voted }: CardProps) => {
             />
 
             <div className="w-full p-2 border-b border-gray-300">
-                <p className="text-sm text-gray-900">Score: {score || 0}</p>
+                <p className="text-sm text-gray-900 antialiased">Score: {score || 0}</p>
             </div>
 
             <div className="flex h-auto mt-1">
